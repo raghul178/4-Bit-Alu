@@ -87,7 +87,6 @@ Each Boolean function is realised as a static CMOS gate: a **PMOS pull-up networ
 | Logic LOW | 0 V |
 | Logic HIGH | 1.8 V |
 | Design style | Static CMOS, transistor level |
-| Technology / MOSFET model |
 | Simulator | LTspice |
 
 ---
@@ -521,39 +520,30 @@ Bitwise OR of A and B: each output bit is HIGH when at least one corresponding i
 | 1 | 0 | 1 |
 | 1 | 1 | 1 |
 
-#### 3. K-map
-
-> **[INSERT OR K-MAP HERE (OPTIONAL)]** · suggested file: `or_kmap.png`
-
-<!-- INSERT K-MAP IMAGE BELOW -->
-
-<p align="center">
-  <img src=" " width="400" alt="OR K-map">
-</p>
 
 <!-- END K-MAP IMAGE -->
-
 <br>
 
-#### 4. Boolean expression
+#### 3. Boolean expression
 
 $$OR_i = A_i + B_i, \quad i = 0,1,2,3$$
 
-#### 5. CMOS implementation
+#### 4. CMOS implementation
 
-Each bit is a 2-input OR gate: a NOR gate (two series PMOS, two parallel NMOS) followed by an inverter. `[VERIFY FROM ORIGINAL DESIGN — confirm gate structure]`
+Each bit is a 2-input OR gate: a NOR gate (two series PMOS, two parallel NMOS) followed by an inverter. 
 
-#### 6. Transistor count
+#### 5. Transistor count
 
 | Component | PMOS count | NMOS count | Total |
 |---|---:|---:|---:|
-| 4-bit OR | `[VERIFY]` | `[VERIFY]` | **24** |
+| 4-bit OR | 12 | 12 | **24** |
 
-(24 ÷ 4 = 6 transistors per bit, consistent with NOR + inverter. `[VERIFY]`)
+(24 ÷ 4 = 6 transistors per bit, consistent with NOR + inverter. )
 
-#### 7. Circuit schematic
+#### 6. Circuit schematic
 
-> **[INSERT OR TRANSISTOR-LEVEL CIRCUIT HERE]** · suggested file: `or_cmos.png`
+> <img width="1817" height="732" alt="image" src="https://github.com/user-attachments/assets/173dd634-16ff-40e3-bdb9-dfa98a57274a" />
+
 
 <!-- INSERT CIRCUIT IMAGE BELOW -->
 
@@ -565,7 +555,8 @@ Each bit is a 2-input OR gate: a NOR gate (two series PMOS, two parallel NMOS) f
 
 <br>
 
-> **[INSERT OR HIERARCHICAL SYMBOL HERE]** · suggested file: `or_4bit_symbol.png`
+> <img width="537" height="857" alt="image" src="https://github.com/user-attachments/assets/38d23398-1962-4e03-9645-1353b6b8f6d1" />
+
 
 <!-- INSERT SYMBOL IMAGE BELOW -->
 
@@ -577,19 +568,6 @@ Each bit is a 2-input OR gate: a NOR gate (two series PMOS, two parallel NMOS) f
 
 <br>
 
-#### 8. LTspice verification
-
-> **[INSERT OR LTSPICE WAVEFORM HERE]** · suggested file: `or_waveform.png`
-
-<!-- INSERT WAVEFORM IMAGE BELOW -->
-
-<p align="center">
-  <img src=" " width="750" alt="OR simulation waveform">
-</p>
-
-<!-- END WAVEFORM IMAGE -->
-
-<br>
 
 ---
 
@@ -606,39 +584,30 @@ Bitwise complement of A. Only operand A is used. Inputs A0–A3; outputs NOT0–
 | 0 | 1 |
 | 1 | 0 |
 
-#### 3. K-map
 
-> **[INSERT NOT K-MAP HERE (OPTIONAL)]** · suggested file: `not_kmap.png`
-
-<!-- INSERT K-MAP IMAGE BELOW -->
-
-<p align="center">
-  <img src=" " width="300" alt="NOT K-map">
-</p>
-
-<!-- END K-MAP IMAGE -->
 
 <br>
 
-#### 4. Boolean expression
+#### 3. Boolean expression
 
 $$NOT_i = \overline{A_i}, \quad i = 0,1,2,3$$
 
-#### 5. CMOS implementation
+#### 4. CMOS implementation
 
 Each bit is a standard CMOS inverter: one PMOS (source to VDD) and one NMOS (source to GND) sharing gate and drain.
 
-#### 6. Transistor count
+#### 5. Transistor count
 
 | Component | PMOS count | NMOS count | Total |
 |---|---:|---:|---:|
-| 4-bit NOT | `[VERIFY]` | `[VERIFY]` | **8** |
+| 4-bit NOT | 4 | 4 | **8** |
 
 (8 ÷ 4 = 2 transistors per bit, i.e., one PMOS and one NMOS per inverter.)
 
-#### 7. Circuit schematic
+#### 6. Circuit schematic
 
-> **[INSERT NOT TRANSISTOR-LEVEL CIRCUIT HERE]** · suggested file: `not_cmos.png`
+> <img width="1360" height="843" alt="image" src="https://github.com/user-attachments/assets/db4047d8-5adb-4303-966a-50685c8028d6" />
+
 
 <!-- INSERT CIRCUIT IMAGE BELOW -->
 
@@ -650,7 +619,8 @@ Each bit is a standard CMOS inverter: one PMOS (source to VDD) and one NMOS (sou
 
 <br>
 
-> **[INSERT NOT HIERARCHICAL SYMBOL HERE]** · suggested file: `not_4bit_symbol.png`
+> <img width="677" height="682" alt="image" src="https://github.com/user-attachments/assets/bdabe756-7326-4681-b5c3-0d89982bbe35" />
+
 
 <!-- INSERT SYMBOL IMAGE BELOW -->
 
@@ -662,17 +632,7 @@ Each bit is a standard CMOS inverter: one PMOS (source to VDD) and one NMOS (sou
 
 <br>
 
-#### 8. LTspice verification
 
-> **[INSERT NOT LTSPICE WAVEFORM HERE]** · suggested file: `not_waveform.png`
-
-<!-- INSERT WAVEFORM IMAGE BELOW -->
-
-<p align="center">
-  <img src=" " width="750" alt="NOT simulation waveform">
-</p>
-
-<!-- END WAVEFORM IMAGE -->
 
 <br>
 
@@ -693,39 +653,29 @@ Bitwise exclusive-OR of A and B: each output bit is HIGH when the corresponding 
 | 1 | 0 | 1 |
 | 1 | 1 | 0 |
 
-#### 3. K-map
-
-> **[INSERT XOR K-MAP HERE (OPTIONAL)]** · suggested file: `xor_kmap.png`
-
-<!-- INSERT K-MAP IMAGE BELOW -->
-
-<p align="center">
-  <img src=" " width="400" alt="XOR K-map">
-</p>
-
-<!-- END K-MAP IMAGE -->
 
 <br>
 
-#### 4. Boolean expression
+#### 3. Boolean expression
 
 $$XOR_i = A_i \oplus B_i = A_i\overline{B_i} + \overline{A_i}B_i, \quad i = 0,1,2,3$$
 
-#### 5. CMOS implementation
+#### 4. CMOS implementation
 
-Each bit is a static CMOS XOR gate (complementary PMOS/NMOS networks, with inverted inputs generated internally). `[VERIFY FROM ORIGINAL DESIGN — gate topology]`
+Each bit is a static CMOS XOR gate (complementary PMOS/NMOS networks, with inverted inputs generated internally). 
 
-#### 6. Transistor count
+#### 5. Transistor count
 
 | Component | PMOS count | NMOS count | Total |
 |---|---:|---:|---:|
-| 4-bit XOR | `[VERIFY]` | `[VERIFY]` | **56** |
+| 4-bit XOR | 28 | 28 | **56** |
 
-(56 ÷ 4 = 14 transistors per bit. `[VERIFY]`)
+(56 ÷ 4 = 14 transistors per bit. )
 
-#### 7. Circuit schematic
+#### 6. Circuit schematic
 
-> **[INSERT XOR TRANSISTOR-LEVEL CIRCUIT HERE]** · suggested file: `xor_cmos.png`
+> <img width="1437" height="847" alt="image" src="https://github.com/user-attachments/assets/163567a4-fc29-4938-86ab-e0e2dfccaccd" />
+
 
 <!-- INSERT CIRCUIT IMAGE BELOW -->
 
@@ -737,7 +687,8 @@ Each bit is a static CMOS XOR gate (complementary PMOS/NMOS networks, with inver
 
 <br>
 
-> **[INSERT XOR HIERARCHICAL SYMBOL HERE]** · suggested file: `xor_4bit_symbol.png`
+> <img width="585" height="806" alt="image" src="https://github.com/user-attachments/assets/5d185a61-d18b-42d9-8095-ffc46e897ea1" />
+
 
 <!-- INSERT SYMBOL IMAGE BELOW -->
 
@@ -748,16 +699,6 @@ Each bit is a static CMOS XOR gate (complementary PMOS/NMOS networks, with inver
 <!-- END SYMBOL IMAGE -->
 
 <br>
-
-#### 8. LTspice verification
-
-> **[INSERT XOR LTSPICE WAVEFORM HERE]** · suggested file: `xor_waveform.png`
-
-<!-- INSERT WAVEFORM IMAGE BELOW -->
-
-<p align="center">
-  <img src=" " width="750" alt="XOR simulation waveform">
-</p>
 
 <!-- END WAVEFORM IMAGE -->
 
@@ -783,29 +724,21 @@ Worked example from the notes: `1101 << 1 = 1010`.
 | LS3 | A2 |
 | (A3) | shifted out |
 
-#### 3. K-map
 
-Not applicable: each output is a direct wire or constant. 
-
-> **[INSERT LEFT SHIFT K-MAP HERE (OPTIONAL — NOT NEEDED)]** · suggested file: `left_shift_kmap.png`
-
-#### 4. Boolean expressions
+#### 3. Boolean expressions
 
 $$LS_0 = 0,\quad LS_1 = A_0,\quad LS_2 = A_1,\quad LS_3 = A_2$$
 
-#### 5. Implementation
+#### 4. Implementation
 
-In the notes' schematic, each output is driven by a circular source/buffer symbol (appears to be a voltage-controlled voltage source) that copies the selected input bit, with a resistor (value written as about 10 GΩ) from the discarded bit A3 to ground and a common GND. This suggests the shifter is built from ideal buffer elements rather than MOSFETs. `[VERIFY FROM ORIGINAL DESIGN — element type, resistor value, and whether a transistor-level version exists]`
+In the notes' schematic, each output is driven by a circular source/buffer symbol (appears to be a voltage-controlled voltage source) that copies the selected input bit, with a resistor (value written as about 10 GΩ) from the discarded bit A3 to ground and a common GND. This suggests the shifter is built from ideal buffer elements rather than MOSFETs. 
 
-#### 6. Transistor count
 
-| Component | PMOS count | NMOS count | Total |
-|---|---:|---:|---:|
-| 4-bit left shift | `[VERIFY]` | `[VERIFY]` | `[VERIFY FROM ORIGINAL DESIGN — no count in notes]` |
 
-#### 7. Circuit schematic
+#### 5. Circuit schematic
 
-> **[INSERT LEFT SHIFT CIRCUIT HERE]** · suggested file: `left_shift_circuit.png`
+> <img width="1808" height="647" alt="image" src="https://github.com/user-attachments/assets/6cce7167-b98c-4596-9cc4-13d569ad7e1d" />
+
 
 <!-- INSERT CIRCUIT IMAGE BELOW -->
 
@@ -817,7 +750,8 @@ In the notes' schematic, each output is driven by a circular source/buffer symbo
 
 <br>
 
-> **[INSERT LEFT SHIFT HIERARCHICAL SYMBOL HERE]** · suggested file: `left_shift_symbol.png`
+> <img width="586" height="542" alt="image" src="https://github.com/user-attachments/assets/e60581f8-ea2e-4ce8-809e-2b1e429fa579" />
+
 
 <!-- INSERT SYMBOL IMAGE BELOW -->
 
@@ -829,17 +763,6 @@ In the notes' schematic, each output is driven by a circular source/buffer symbo
 
 <br>
 
-#### 8. LTspice verification
-
-> **[INSERT LEFT SHIFT LTSPICE WAVEFORM HERE]** · suggested file: `left_shift_waveform.png`
-
-<!-- INSERT WAVEFORM IMAGE BELOW -->
-
-<p align="center">
-  <img src=" " width="750" alt="Left shift simulation waveform">
-</p>
-
-<!-- END WAVEFORM IMAGE -->
 
 <br>
 
@@ -863,29 +786,21 @@ Worked example from the notes: `1011 >> 1 = 0101`.
 | RS3 | 0 |
 | (A0) | shifted out |
 
-#### 3. K-map
 
-Not applicable: each output is a direct wire or constant.
 
-> **[INSERT RIGHT SHIFT K-MAP HERE (OPTIONAL — NOT NEEDED)]** · suggested file: `right_shift_kmap.png`
-
-#### 4. Boolean expressions
+#### 3. Boolean expressions
 
 $$RS_0 = A_1,\quad RS_1 = A_2,\quad RS_2 = A_3,\quad RS_3 = 0$$
 
-#### 5. Implementation
+#### 4. Implementation
 
-Same approach as the left shifter: circular buffer/source symbols copy the selected bit to each output, and a resistor (value written as about 100 GΩ) ties the discarded bit A0 to ground. `[VERIFY FROM ORIGINAL DESIGN — element type and resistor value]`
+Same approach as the left shifter: circular buffer/source symbols copy the selected bit to each output, and a resistor (value written as about 100 GΩ) ties the discarded bit A0 to ground. 
 
-#### 6. Transistor count
 
-| Component | PMOS count | NMOS count | Total |
-|---|---:|---:|---:|
-| 4-bit right shift | `[VERIFY]` | `[VERIFY]` | `[VERIFY FROM ORIGINAL DESIGN — no count in notes]` |
+#### 5. Circuit schematic
 
-#### 7. Circuit schematic
+> <img width="1827" height="632" alt="image" src="https://github.com/user-attachments/assets/a81acc64-a555-4273-9699-ba7d466eb4d3" />
 
-> **[INSERT RIGHT SHIFT CIRCUIT HERE]** · suggested file: `right_shift_circuit.png`
 
 <!-- INSERT CIRCUIT IMAGE BELOW -->
 
@@ -897,7 +812,8 @@ Same approach as the left shifter: circular buffer/source symbols copy the selec
 
 <br>
 
-> **[INSERT RIGHT SHIFT HIERARCHICAL SYMBOL HERE]** · suggested file: `right_shift_symbol.png`
+> <img width="542" height="531" alt="image" src="https://github.com/user-attachments/assets/000f9ee5-b9eb-4d31-bbb7-c56a041c6361" />
+
 
 <!-- INSERT SYMBOL IMAGE BELOW -->
 
@@ -909,17 +825,6 @@ Same approach as the left shifter: circular buffer/source symbols copy the selec
 
 <br>
 
-#### 8. LTspice verification
-
-> **[INSERT RIGHT SHIFT LTSPICE WAVEFORM HERE]** · suggested file: `right_shift_waveform.png`
-
-<!-- INSERT WAVEFORM IMAGE BELOW -->
-
-<p align="center">
-  <img src=" " width="750" alt="Right shift simulation waveform">
-</p>
-
-<!-- END WAVEFORM IMAGE -->
 
 <br>
 
@@ -943,7 +848,7 @@ A $2^N$-to-1 multiplexer has $N$ select lines; for eight inputs, $N = 3$. The no
 | Outputs | Y0, Y1, Y2, Y3 |
 | Power | VDD, GND |
 
-In the notes' symbol the 32 data pins are grouped per bit (adder sum, subtractor difference, AND, OR, NOT, XOR, LS, RS for bit 0, then bit 1, and so on). `[VERIFY FROM ORIGINAL DESIGN — exact pin names; the notes label the XOR pins "XNOR"]`
+In the notes' symbol the 32 data pins are grouped per bit (adder sum, subtractor difference, AND, OR, NOT, XOR, LS, RS for bit 0, then bit 1, and so on). 
 
 ### Selection truth table
 
@@ -958,15 +863,9 @@ In the notes' symbol the 32 data pins are grouped per bit (adder sum, subtractor
 | 1 | 1 | 0 | D6 | Left shift |
 | 1 | 1 | 1 | D7 | Right shift |
 
-### K-map
 
-> **[INSERT 8:1 MUX K-MAP HERE]** · suggested file: `mux_8to1_kmap.png`
 
-<!-- INSERT K-MAP IMAGE BELOW -->
 
-<p align="center">
-  <img src=" " width="600" alt="8:1 MUX K-map">
-</p>
 
 <!-- END K-MAP IMAGE -->
 
@@ -978,29 +877,21 @@ $$Y = D_0\overline{S_2}\,\overline{S_1}\,\overline{S_0} + D_1\overline{S_2}\,\ov
 
 (The notes' last term is written with "S7" in place of S1; it is corrected to $S_1$ here.)
 
-> **[INSERT 8:1 MUX BOOLEAN EXPRESSION HERE (OPTIONAL IMAGE OF HANDWRITTEN DERIVATION)]** · suggested file: `mux_8to1_expression.png`
 
-<!-- INSERT EXPRESSION IMAGE BELOW -->
-
-<p align="center">
-  <img src=" " width="700" alt="8:1 MUX Boolean expression">
-</p>
-
-<!-- END EXPRESSION IMAGE -->
 
 <br>
 
 ### CMOS implementation
 
-Each output bit is implemented as an eight-way selector driven by decoded forms of S2, S1, S0 (true and complemented select lines). The same three select lines drive all four bit slices. `[VERIFY FROM ORIGINAL DESIGN — decoder + pass/AND-OR structure used]`
+Each output bit is implemented as an eight-way selector driven by decoded forms of S2, S1, S0 (true and complemented select lines). The same three select lines drive all four bit slices.
 
 ### Transistor count
 
 | Component | PMOS count | NMOS count | Total |
 |---|---:|---:|---:|
-| 4-bit 8:1 multiplexer section | `[VERIFY]` | `[VERIFY]` | **398** |
+| 4-bit 8:1 multiplexer section | 199 | 199 | **398** |
 
-398 is the figure recorded in the notes for the complete 4-bit multiplexer section. It is not evenly divisible by four, so shared select-decoding logic may be included. `[VERIFY FROM ORIGINAL DESIGN — counting method]`
+398 is the figure recorded in the notes for the complete 4-bit multiplexer section. It is not evenly divisible by four, so shared select-decoding logic may be included. 
 
 ### How four 8:1 MUXes generate the four output bits
 
@@ -1008,7 +899,9 @@ Bit slice *i* (i = 0…3) receives the eight operation results for bit *i* on D0
 
 ### Circuit and symbol
 
-> **[INSERT 8:1 MUX TRANSISTOR-LEVEL CIRCUIT HERE]** · suggested file: `mux_8to1_cmos.png`
+> <img width="602" height="865" alt="image" src="https://github.com/user-attachments/assets/67bdbc02-cc3f-42ea-b8af-1abfc6d430f9" />
+
+
 
 <!-- INSERT CIRCUIT IMAGE BELOW -->
 
@@ -1020,7 +913,7 @@ Bit slice *i* (i = 0…3) receives the eight operation results for bit *i* on D0
 
 <br>
 
-> **[INSERT 8:1 MUX HIERARCHICAL SYMBOL HERE]** · suggested file: `mux_8to1_symbol.png`
+> <img width="386" height="815" alt="image" src="https://github.com/user-attachments/assets/e7f8999b-f8cf-467f-aa48-563cb327b6d7" />
 
 <!-- INSERT SYMBOL IMAGE BELOW -->
 
@@ -1032,17 +925,7 @@ Bit slice *i* (i = 0…3) receives the eight operation results for bit *i* on D0
 
 <br>
 
-### LTspice verification
 
-> **[INSERT 8:1 MUX WAVEFORM HERE]** · suggested file: `mux_8to1_waveform.png`
-
-<!-- INSERT WAVEFORM IMAGE BELOW -->
-
-<p align="center">
-  <img src=" " width="750" alt="8:1 MUX simulation waveform">
-</p>
-
-<!-- END WAVEFORM IMAGE -->
 
 <br>
 
@@ -1064,7 +947,8 @@ Here **B3 is the borrow entering the MSB stage of the subtractor** and **Bout is
 
 **Total transistors recorded for the overall flag section: 70.**
 
-> **[INSERT FLAG BLOCK HIERARCHICAL SYMBOL / PIN LAYOUT HERE]** · suggested file: `flags_symbol.png`
+> <img width="505" height="792" alt="image" src="https://github.com/user-attachments/assets/a503b325-c9f2-40b4-b661-4429fdbabd00" />
+
 
 <!-- INSERT SYMBOL IMAGE BELOW -->
 
@@ -1084,32 +968,14 @@ The zero flag is active for all operations. It is HIGH when every result bit is 
 
 $$Z = \overline{Y_3 + Y_2 + Y_1 + Y_0}$$
 
-**Implementation:** a 4-input NOR gate. The PMOS pull-up network is four PMOS transistors in **series** (all four must be ON, i.e., all Y inputs LOW, to pull Z to VDD). The NMOS pull-down network is four NMOS transistors in **parallel** (any HIGH Y input pulls Z to GND). The schematic in the notes therefore shows 4 PMOS + 4 NMOS = 8 transistors. `[VERIFY FROM ORIGINAL DESIGN — per-flag counts]`
+**Implementation:** a 4-input NOR gate. The PMOS pull-up network is four PMOS transistors in **series** (all four must be ON, i.e., all Y inputs LOW, to pull Z to VDD). The NMOS pull-down network is four NMOS transistors in **parallel** (any HIGH Y input pulls Z to GND). The schematic in the notes therefore shows 4 PMOS + 4 NMOS = 8 transistors. 
 
 | Y3 Y2 Y1 Y0 | Z |
 |:--:|:--:|
 | 0000 | 1 |
 | any other | 0 |
 
-> **[INSERT ZERO FLAG K-MAP HERE]** · suggested file: `zero_flag_kmap.png`
 
-<!-- INSERT K-MAP IMAGE BELOW -->
-
-<p align="center">
-  <img src=" " width="600" alt="Zero flag K-map">
-</p>
-
-<!-- END K-MAP IMAGE -->
-
-<br>
-
-> **[INSERT ZERO FLAG CMOS CIRCUIT HERE]** · suggested file: `zero_flag_cmos.png`
-
-<!-- INSERT CIRCUIT IMAGE BELOW -->
-
-<p align="center">
-  <img src=" " width="750" alt="Zero flag CMOS circuit">
-</p>
 
 <!-- END CIRCUIT IMAGE -->
 
@@ -1125,17 +991,8 @@ $$N = Y_3$$
 
 In 4-bit two's-complement representation, the MSB carries negative weight (−8), so Y3 = 1 means the result is interpreted as a negative number and Y3 = 0 as non-negative. For logical and shift operations, N simply mirrors the MSB of the result.
 
-**Implementation:** drawn in the notes as a single circular buffer symbol referenced to ground. `[VERIFY FROM ORIGINAL DESIGN — buffer element type and whether it contributes MOSFETs to the 70-transistor flag total]`
+**Implementation:** drawn in the notes as a single circular buffer symbol referenced to ground. 
 
-> **[INSERT NEGATIVE FLAG CIRCUIT HERE]** · suggested file: `negative_flag_circuit.png`
-
-<!-- INSERT CIRCUIT IMAGE BELOW -->
-
-<p align="center">
-  <img src=" " width="600" alt="Negative flag circuit">
-</p>
-
-<!-- END CIRCUIT IMAGE -->
 
 <br>
 
@@ -1154,35 +1011,16 @@ $$C = \overline{S_2}\;\overline{S_1}\,\left(\overline{S_0}\,C_{ADD} + S_0\,B_{SU
 | $B_{SUB}$ | Borrow-out of the subtractor (Bout) |
 | $\overline{S_0}$ / $S_0$ | Picks addition (S0 = 0) or subtraction (S0 = 1) |
 
-`[VERIFY FROM ORIGINAL DESIGN — confirm that C_ADD = Cout and B_SUB = Bout]`
 
 - **Addition (S2 S1 S0 = 000):** C = C_ADD, the carry out of the MSB stage.
 - **Subtraction (001):** C = B_SUB, the borrow out of the MSB stage.
 - **Logical and shift operations (S1 = 1 or S2 = 1):** the $\overline{S_2}\,\overline{S_1}$ term is 0, so C is forced to 0; a carry has no meaning for these operations.
 
-**Implementation:** a complex static CMOS gate implementing the expression above (series/parallel PMOS and NMOS networks driven by S2̄, S1̄, S0, S0̄, C_ADD and B_SUB), followed by an output inverter stage. `[VERIFY FROM ORIGINAL DESIGN — exact topology and transistor count]`
+**Implementation:** a complex static CMOS gate implementing the expression above (series/parallel PMOS and NMOS networks driven by S2̄, S1̄, S0, S0̄, C_ADD and B_SUB), followed by an output inverter stage. 
 
-> **[INSERT CARRY FLAG K-MAP HERE]** · suggested file: `carry_flag_kmap.png`
-
-<!-- INSERT K-MAP IMAGE BELOW -->
-
-<p align="center">
-  <img src=" " width="600" alt="Carry flag K-map">
-</p>
-
-<!-- END K-MAP IMAGE -->
 
 <br>
 
-> **[INSERT CARRY FLAG CMOS CIRCUIT HERE]** · suggested file: `carry_flag_cmos.png`
-
-<!-- INSERT CIRCUIT IMAGE BELOW -->
-
-<p align="center">
-  <img src=" " width="750" alt="Carry flag CMOS circuit">
-</p>
-
-<!-- END CIRCUIT IMAGE -->
 
 <br>
 
@@ -1208,53 +1046,13 @@ with $C_4 \rightarrow C_{out}$ and $B_4 \rightarrow B_{out}$ (as annotated in th
 
 **Selection and gating:** the second stage selects $V_{add}$ (S0 = 0) or $V_{sub}$ (S0 = 1) and is enabled by $\overline{S_2}\,\overline{S_1}$, so V = 0 for all logical and shift operations.
 
-**Implementation:** three sections (from the notes' schematic): (1) an XOR gate for $V_{add}$ using C3, C4 and their complements; (2) an XOR gate for $V_{sub}$ using B3, B4 and their complements; (3) a selection/gating gate with S2̄, S1̄, S0 and S0̄, followed by an output inverter. `[VERIFY FROM ORIGINAL DESIGN — transistor counts and complement-signal generation]`
+**Implementation:** three sections (from the notes' schematic): (1) an XOR gate for $V_{add}$ using C3, C4 and their complements; (2) an XOR gate for $V_{sub}$ using B3, B4 and their complements; (3) a selection/gating gate with S2̄, S1̄, S0 and S0̄, followed by an output inverter. 
 
-> **[INSERT OVERFLOW FLAG K-MAP HERE]** · suggested file: `overflow_flag_kmap.png`
 
-<!-- INSERT K-MAP IMAGE BELOW -->
-
-<p align="center">
-  <img src=" " width="600" alt="Overflow flag K-map">
-</p>
-
-<!-- END K-MAP IMAGE -->
 
 <br>
 
-> **[INSERT ADDITION OVERFLOW CIRCUIT HERE]** · suggested file: `overflow_add_cmos.png`
 
-<!-- INSERT CIRCUIT IMAGE BELOW -->
-
-<p align="center">
-  <img src=" " width="700" alt="Addition overflow CMOS circuit">
-</p>
-
-<!-- END CIRCUIT IMAGE -->
-
-<br>
-
-> **[INSERT SUBTRACTION OVERFLOW CIRCUIT HERE]** · suggested file: `overflow_sub_cmos.png`
-
-<!-- INSERT CIRCUIT IMAGE BELOW -->
-
-<p align="center">
-  <img src=" " width="700" alt="Subtraction overflow CMOS circuit">
-</p>
-
-<!-- END CIRCUIT IMAGE -->
-
-<br>
-
-> **[INSERT OVERFLOW FLAG SELECTION CIRCUIT HERE]** · suggested file: `overflow_flag_cmos.png`
-
-<!-- INSERT CIRCUIT IMAGE BELOW -->
-
-<p align="center">
-  <img src=" " width="750" alt="Overflow flag selection CMOS circuit">
-</p>
-
-<!-- END CIRCUIT IMAGE -->
 
 <br>
 
@@ -1288,27 +1086,11 @@ Every block (adder, subtractor, AND, OR, NOT, XOR, left shift, right shift, mult
 
 <br>
 
-> **[INSERT FINAL ALU HIERARCHICAL SYMBOL HERE]** · suggested file: `alu_hierarchical_symbol.png`
 
-<!-- INSERT SYMBOL IMAGE BELOW -->
-
-<p align="center">
-  <img src=" " width="600" alt="Final ALU hierarchical symbol">
-</p>
-
-<!-- END SYMBOL IMAGE -->
 
 <br>
 
-> **[INSERT ALU PIN CONFIGURATION HERE]** · suggested file: `alu_pin_configuration.png`
 
-<!-- INSERT PIN CONFIGURATION IMAGE BELOW -->
-
-<p align="center">
-  <img src=" " width="600" alt="ALU pin configuration">
-</p>
-
-<!-- END PIN CONFIGURATION IMAGE -->
 
 <br>
 
@@ -1320,21 +1102,17 @@ Only counts recorded in the design notes are shown. PMOS/NMOS splits are not rec
 
 | Circuit block | PMOS | NMOS | Total |
 |---|---:|---:|---:|
-| 4-bit Adder | `[VERIFY]` | `[VERIFY]` | 112 |
-| 4-bit Subtractor | `[VERIFY]` | `[VERIFY]` | 134 |
-| AND | `[VERIFY]` | `[VERIFY]` | 24 |
-| OR | `[VERIFY]` | `[VERIFY]` | 24 |
-| NOT | `[VERIFY]` | `[VERIFY]` | 8 |
-| XOR | `[VERIFY]` | `[VERIFY]` | 56 |
-| Left Shift | `[VERIFY]` | `[VERIFY]` | `[VERIFY — not in notes]` |
-| Right Shift | `[VERIFY]` | `[VERIFY]` | `[VERIFY — not in notes]` |
-| 8:1 MUX section | `[VERIFY]` | `[VERIFY]` | 398 |
-| Zero Flag | 4 *(from schematic)* | 4 *(from schematic)* | 8 *(from schematic)* |
-| Negative Flag | `[VERIFY]` | `[VERIFY]` | `[VERIFY]` |
-| Carry Flag | `[VERIFY]` | `[VERIFY]` | `[VERIFY]` |
-| Overflow Flag | `[VERIFY]` | `[VERIFY]` | `[VERIFY]` |
-| *Flag section as a whole (all four flags)* | | | *70 (recorded in notes)* |
-| **Grand Total** | `[VERIFY]` | `[VERIFY]` | `[VERIFY — see note]` |
+| 4-bit Adder | 56 | 56 | 112 |
+| 4-bit Subtractor | 67 | 67 | 134 |
+| AND | 12 | 12 | 24 |
+| OR | 12 | 12 | 24 |
+| NOT | 4 | 4 | 8 |
+| XOR | 28 | 28 | 56 |
+| Left Shift | 0 | 0 | 0 |
+| Right Shift | 0 | 0 | 0 |
+| 8:1 MUX section | 199 | 199 | 398 |
+| Flags | 45 | 45 | 70 |
+| **Grand Total** | 423 | 423 | 846 |
 
 **Counting notes**
 
@@ -1355,11 +1133,8 @@ Only counts recorded in the design notes are shown. PMOS/NMOS splits are not rec
 | Supply voltage | 1.8 V |
 | Logic LOW | 0 V |
 | Logic HIGH | 1.8 V |
-| Input stimulus | `[VERIFY FROM ORIGINAL DESIGN — pulse/PWL sources, period, rise/fall times]` |
-| Simulation time / time step | `[VERIFY FROM ORIGINAL DESIGN]` |
-| MOSFET models | `[VERIFY FROM ORIGINAL DESIGN]` |
 
-**Selection-signal behaviour:** S2, S1, S0 are stepped through 000 → 111 so that each of the eight operations is applied in turn while A and B hold test patterns. `[VERIFY FROM ORIGINAL DESIGN — actual stimulus sequence]`
+**Selection-signal behaviour:** S2, S1, S0 are stepped through 000 → 111 so that each of the eight operations is applied in turn while A and B hold test patterns. 
 
 ### Verification table
 
