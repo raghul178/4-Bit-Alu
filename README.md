@@ -34,8 +34,7 @@ A transistor-level CMOS design of a 4-bit ALU supporting eight arithmetic, logic
 12. [Results and Conclusion](#12-results-and-conclusion)
 13. [Future Enhancements](#13-future-enhancements)
 14. [Repository Structure](#14-repository-structure)
-15. [License](#15-license)
-16. [Author and Contributors](#16-author-and-contributors)
+15. [Author and Contributors](#16-author-and-contributors)
 
 ---
 
@@ -1301,16 +1300,10 @@ Functional verification is performed in LTspice at 1.8 V. `[ADD YOUR OBSERVED RE
 
 ---
 
-## 15. License
 
-`[ADD LICENSE HERE — e.g., MIT, CC BY 4.0, or "All rights reserved"]`
 
----
-
-## 16. Author and Contributors
+## 15. Author and Contributors
 
 | Role | Name | Contact |
 |---|---|---|
-| Author | `[YOUR NAME]` | `[EMAIL / LINKEDIN / GITHUB]` |
-| Contributors | `[NAMES, IF ANY]` | |
-| Institution / Guide | `[OPTIONAL]` | |
+| Author | RAGHUL P | raghulp17112006gmail.com |
