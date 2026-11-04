@@ -1139,31 +1139,22 @@ Only counts recorded in the design notes are shown. PMOS/NMOS splits are not rec
 
 Only the two shift examples are known from the notes; the other rows must be filled in from your simulations.
 
-| Operation | Selection | Input A | Input B | Expected output | Simulated output | Status |
+| Operation | Selection | Input A | Input B | Simulated output |
 |---|---|---|---|---|---|---|
-| Addition | 000 | | | | | |
-| Subtraction | 001 | | | | | |
-| AND | 010 | | | | | |
-| OR | 011 | | | | | |
-| NOT | 100 | | | | | |
-| XOR | 101 | | | | | |
-| Left shift | 110 | 1101 | — | 1010 | | |
-| Right shift | 111 | 1011 | — | 0101 | | |
+| Addition | 000 | 0101 | 0011 | 1000 | 
+| Subtraction | 001 | 1001 | 0011 | 0110 | 
+| AND | 010 | 1100 | 1010| | 1000 | 
+| OR | 011 | 0101 | 1010| | 1111 | 
+| NOT | 100 | 0101 | 0000| 1010 | 
+| XOR | 101 | 1100 | 1010| 0110 | 
+| Left shift | 110 | 1101 | — | 1010 | 
+| Right shift | 111 | 1011 | — | 0101 |
 
-### Flag verification
-
-| Flag | Condition tested | Expected | Simulated | Status |
-|---|---|---|---|---|
-| Z | Y = 0000 | 1 | | |
-| N | Y3 = 1 | 1 | | |
-| C | Add with carry-out / subtract with borrow-out | 1 | | |
-| C | Any logic or shift operation | 0 | | |
-| V | Signed overflow in add / subtract | 1 | | |
-| V | Any logic or shift operation | 0 | | |
 
 ### Waveforms
 
-> **[INSERT ADDER WAVEFORM HERE]** · suggested file: `adder_waveform.png`
+> <img width="1903" height="847" alt="image" src="https://github.com/user-attachments/assets/25c88ad1-b93e-4ae7-ae30-d1d93276458f" />
+
 
 <!-- INSERT WAVEFORM IMAGE BELOW -->
 
@@ -1175,7 +1166,8 @@ Only the two shift examples are known from the notes; the other rows must be fil
 
 <br>
 
-> **[INSERT SUBTRACTOR WAVEFORM HERE]** · suggested file: `subtractor_waveform.png`
+> <img width="1907" height="851" alt="image" src="https://github.com/user-attachments/assets/329fa49a-685a-45d0-adae-25b6e29b1767" />
+
 
 <!-- INSERT WAVEFORM IMAGE BELOW -->
 
@@ -1187,7 +1179,7 @@ Only the two shift examples are known from the notes; the other rows must be fil
 
 <br>
 
-> **[INSERT LOGIC OPERATIONS WAVEFORM HERE]** · suggested file: `logic_operations_waveform.png`
+> 
 
 <!-- INSERT WAVEFORM IMAGE BELOW -->
 
@@ -1198,8 +1190,34 @@ Only the two shift examples are known from the notes; the other rows must be fil
 <!-- END WAVEFORM IMAGE -->
 
 <br>
+AND WAVEFORM:
+> <img width="1906" height="852" alt="image" src="https://github.com/user-attachments/assets/caf798ec-29e3-496d-8880-84f3b7d05bf0" />
 
-> **[INSERT SHIFT OPERATIONS WAVEFORM HERE]** · suggested file: `shift_operations_waveform.png`
+
+OR WAVEFORM:
+<img width="1915" height="842" alt="image" src="https://github.com/user-attachments/assets/4b701109-853e-4b1a-9a36-6860fa956fae" />
+
+
+NOT WAVEFORM:
+<img width="1913" height="852" alt="image" src="https://github.com/user-attachments/assets/a891105c-91f4-49e9-9ca0-ffefcd2156a8" />
+
+
+XOR WAVEFORM:
+<img width="1912" height="852" alt="image" src="https://github.com/user-attachments/assets/a5c18ec8-104a-4c25-9782-b5927164f953" />
+
+
+LEFT SHIFT WAVEFORM:
+<img width="1908" height="838" alt="image" src="https://github.com/user-attachments/assets/b1804beb-aa87-4647-a8a0-f16e8d86171a" />
+
+
+RIGHT SHIFT WAVEFORM:
+<img width="1908" height="856" alt="image" src="https://github.com/user-attachments/assets/0a2b174c-30cd-4d77-876e-9c4d86afbd84" />
+
+
+
+
+
+
 
 <!-- INSERT WAVEFORM IMAGE BELOW -->
 
@@ -1211,7 +1229,7 @@ Only the two shift examples are known from the notes; the other rows must be fil
 
 <br>
 
-> **[INSERT STATUS FLAGS WAVEFORM HERE]** · suggested file: `status_flags_waveform.png`
+> 
 
 <!-- INSERT WAVEFORM IMAGE BELOW -->
 
@@ -1223,7 +1241,8 @@ Only the two shift examples are known from the notes; the other rows must be fil
 
 <br>
 
-> **[INSERT COMPLETE ALU SIMULATION WAVEFORM HERE]** · suggested file: `alu_final_waveform.png`
+><img width="1915" height="845" alt="image" src="https://github.com/user-attachments/assets/cfc6547a-4721-49f7-91a7-035c51e89782" />
+
 
 <!-- INSERT WAVEFORM IMAGE BELOW -->
 
@@ -1241,7 +1260,7 @@ Only the two shift examples are known from the notes; the other rows must be fil
 
 This project implements a 4-bit ALU at the transistor level in CMOS, covering eight operations: addition, subtraction, AND, OR, NOT, XOR, logical left shift and logical right shift. The arithmetic blocks were derived from K-map minimisation of the full adder and full subtractor and cascaded as ripple-carry and ripple-borrow structures. Output selection uses a 4-bit 8:1 multiplexer driven by S2 S1 S0, and four status flags (Zero, Negative, Carry, Overflow) are generated from the result bits, select lines and carry/borrow signals, with carry and overflow gated to the arithmetic operations only.
 
-Functional verification is performed in LTspice at 1.8 V. `[ADD YOUR OBSERVED RESULTS HERE ONCE THE VERIFICATION TABLE IS COMPLETE — no results are claimed in this draft]`
+Functional verification is performed in LTspice at 1.8 V. 
 
 **Learning outcomes**
 
