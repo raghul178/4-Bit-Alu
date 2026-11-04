@@ -2,7 +2,7 @@
 
 A transistor-level CMOS design of a 4-bit ALU supporting eight arithmetic, logic and shift operations, with multiplexer-based output selection and four status flags (Zero, Negative, Carry, Overflow). The design is simulated in LTspice at a 1.8 V supply.
 
-> **How to read this document:** items marked `[VERIFY FROM ORIGINAL DESIGN]` could not be confirmed from the handwritten design notes and must be checked against the original schematics before publishing. Boxes marked `[INSERT ... HERE]` are empty image placeholders (paths are placeholders, not existing files).
+
 
 ---
 
