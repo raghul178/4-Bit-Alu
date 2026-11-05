@@ -1262,6 +1262,14 @@ This project implements a 4-bit ALU at the transistor level in CMOS, covering ei
 
 Functional verification is performed in LTspice at 1.8 V. 
 
+Total circuit Behaviour at:
+       .tran 0 1.28u 200n 1n
+       S0 PULSE(0 1.8 0 1n 1n 20n 40n)
+       S1 PULSE(0 1.8 0 1n 1n 40n 80n)
+       S2 PULSE(0 1.8 0 1n 1n 80n 160n)
+<img width="1910" height="881" alt="image" src="https://github.com/user-attachments/assets/cb99c46f-9a02-452a-9906-245201b3c21c" />
+
+
 **Learning outcomes**
 
 - Translating Boolean expressions and K-maps into static CMOS pull-up/pull-down networks.
